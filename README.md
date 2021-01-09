@@ -1,7 +1,7 @@
 # Timeout and Interval
 Implementation of setTimeout and setInterval with pause.
 
-**This package is currently NOT tested, I would love to hear your feedback!! Feel free to [open an issue](issues/new)!**
+**This package is currently NOT tested, I would love to hear your feedback!! Feel free to [open an issue](https://github.com/blaumeise20/date-timeout-interval/issues/new)!**
 
 ## Instalation
 
