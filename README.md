@@ -1,7 +1,7 @@
 # Timeout and Interval
 Implementation of setTimeout and setInterval with pause.
 
-**This package is currently NOT tested, I would love to hear your feedback!! Feel free to [open an issue](https://github.com/blaumeise20/date-timeout-interval/issues/new)!**
+**The test coverage of this package is currently NOT GOOD, I would love to hear your feedback!! Feel free to [open an issue](https://github.com/blaumeise20/date-timeout-interval/issues/new)!**
 
 ## Instalation
 
@@ -30,19 +30,19 @@ This will add `Timeout` and `Interval` to `Date`.
 `autoStart: boolean` - If the timer should automatically start. This will call `start` internally.
 
 * `start(): this`
-  
+
   Starts the timer. If the timer is currently paused, it will resume the timer.
 
 * `stop(): this`
-  
+
   Stops the timer and resets it to 0. Acts like `clearTimeout`.
 
 * `pause(): this`
-  
+
   Pauses the timer without reseting it. This is the main functionality of this class.
 
 * `state: 0 | 1 | 2 | 3`
-  
+
   Defines the current state of the timer.
   | State | Description |
   |:-----:| ----------- |
@@ -65,19 +65,19 @@ This will add `Timeout` and `Interval` to `Date`.
 `autoStart: boolean` - If the timer should automatically start. This will call `start` internally.
 
 * `start(): this`
-  
+
   Starts the interval. If the interval is currently paused, it will resume the interval.
 
 * `stop(): this`
-  
+
   Stops the interval and resets it to 0. Acts like `clearInterval`.
 
 * `pause(): this`
-  
+
   Pauses the interval without reseting it. This will also remember the time left to the next call, so if you resume it again, it will continue at the position it stopped.
 
 * `state: 0 | 1 | 2`
-  
+
   Defines the current state of the interval. These are the same as with the timeout, but there is no "end" state, because the interval will never end.
   | State | Description |
   |:-----:| ----------- |
