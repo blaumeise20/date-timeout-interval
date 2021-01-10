@@ -24,10 +24,10 @@ This will add `Timeout` and `Interval` to `Date`.
 
 ## Documentation
 
-### `new Timeout(callback: () => void, timeMS: number, autoStart: bool = false)`
+### `new Timeout(callback: () => void, timeMS: number, autoStart: boolean = false)`
 `callback: () => void` - Function to execute when time is over. `Timeout` instance will be applied as `this`.<br />
 `timeMS: number` - Time in milliseconds, after which the callback should fire.
-`autoStart: bool` - If the timer should automatically start. This will call `start` internally.
+`autoStart: boolean` - If the timer should automatically start. This will call `start` internally.
 
 * `start(): this`
   
@@ -62,7 +62,7 @@ This will add `Timeout` and `Interval` to `Date`.
 ### `new Interval(callback: () => void, timeMS: number, autoStart)`
 `callback` - Function to execute in specific intervals. `Interval` instance will be applied as `this`.<br />
 `timeMS` - Interval time in milliseconds.
-`autoStart: bool` - If the timer should automatically start. This will call `start` internally.
+`autoStart: boolean` - If the timer should automatically start. This will call `start` internally.
 
 * `start(): this`
   
