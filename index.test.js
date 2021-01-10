@@ -1,4 +1,4 @@
-const { Timeout, Interval } = require( "date-timeout-interval");
+const { Timeout, Interval } = require("date-timeout-interval");
 require('jest');
 
 beforeEach(() => {
@@ -7,7 +7,7 @@ beforeEach(() => {
 
 describe('state tests', () => {
     test('state is set to 0 after creation of timer', () => {
-        const to = new Timeout(() => {}, 0);
+        const to = new Timeout(() => { }, 0);
         expect(to.state).toBe(0);
     });
 
@@ -34,18 +34,18 @@ describe('state tests', () => {
 
 describe('time start tests', () => {
     test('timeout is not started when autostart is false', () => {
-        const to = new Timeout(() => {}, 0, false);
+        const to = new Timeout(() => { }, 0, false);
         expect(setTimeout).toHaveBeenCalledTimes(0);
     });
 
     test('timeout is not started when autostart is not specified', () => {
-        const to = new Timeout(() => {}, 0);
+        const to = new Timeout(() => { }, 0);
         expect(setTimeout).toHaveBeenCalledTimes(0);
     });
 
     test('timeout is started when autostart is true', () => {
         const waitTime = 1000;
-        const to = new Timeout(() => {}, waitTime, true);
+        const to = new Timeout(() => { }, waitTime, true);
         expect(setTimeout).toHaveBeenCalledTimes(1);
         expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), waitTime);
     });
