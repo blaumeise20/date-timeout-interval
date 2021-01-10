@@ -10,16 +10,15 @@ describe('state tests', () => {
         const to = new Timeout(() => {}, 0);
         expect(to.state).toBe(0);
     });
-    
-    // The following test does not complete successfully. Might be a bug.
-    test.skip('state is set to 1 when timer has been started', () => {
+
+    test('state is set to 1 when timer has been started', () => {
         const waitTime = 1000;
         const callback = jest.fn();
         const to = new Timeout(callback, waitTime);
         to.start();
         expect(to.state).toBe(1);
     });
-    
+
     test('state is set to 3 and callback is called after timer is completed', () => {
         const waitTime = 1000;
         const callback = jest.fn();
