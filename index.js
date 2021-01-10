@@ -16,12 +16,12 @@ Timeout.prototype.start = function start(time) {
 		if (this.state == 2) {
 			this._startedAt = Date.now();
 			this._timerId = setTimeout(this._callback, this._timeLeft);
-			this._state = 1;
+			this.state = 1;
 		}
 		else if (this.state == 0) {
 			this._startedAt = Date.now();
 			this._timerId = setTimeout(this._callback, this.currentTime);
-			this._state = 1;
+			this.state = 1;
 		}
 	}
 };
@@ -65,13 +65,13 @@ Interval.prototype.start = function start() {
 				this._isInTimeout = false;
 				this._timerId = setInterval(self._callback, self.currentTime);
 			}, this._timeLeft);
-			this._state = 1;
+			this.state = 1;
 			this._isInTimeout = true;
 		}
 		else if (this.state == 0) {
 			this._lastTrigger = Date.now();
 			this._timerId = setInterval(this._callback, this.currentTime);
-			this._state = 1;
+			this.state = 1;
 		}
 	}
 };
