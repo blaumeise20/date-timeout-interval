@@ -95,5 +95,10 @@ Object.defineProperty(Interval.prototype, "timeLeft", {
 	}
 });
 
+var TimerState = {};
+TimerState[TimerState["Reset"] = 0] = "Reset";
+TimerState[TimerState["Running"] = 1] = "Running";
+TimerState[TimerState["Paused"] = 2] = "Paused";
+TimerState[TimerState["Done"] = 3] = "Done";
 
-module.exports = { Timeout: Timeout, Interval: Interval };
+module.exports = { Timeout: Timeout, Interval: Interval, TimerState: TimerState };

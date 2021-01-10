@@ -16,3 +16,9 @@ export declare class Interval {
 	public readonly currentTime: number;
 	public readonly timeLeft: number;
 }
+export enum TimerState {
+	Reset = 0,
+	Running = 1,
+	Paused = 2,
+	Done = 3
+}
