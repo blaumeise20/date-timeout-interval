@@ -49,4 +49,21 @@ describe('time start tests', () => {
         expect(setTimeout).toHaveBeenCalledTimes(1);
         expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), waitTime);
     });
+
+    test('interval is not started when autostart is false', () => {
+        const to = new Interval(() => to.stop(), 1, false);
+        expect(setInterval).toHaveBeenCalledTimes(0);
+    });
+
+    test('interval is not started when autostart is not specified', () => {
+        const to = new Interval(() => to.stop(), 1);
+        expect(setInterval).toHaveBeenCalledTimes(0);
+    });
+
+    test('interval is started when autostart is true', () => {
+        const waitTime = 1000;
+        const to = new Interval(() => to.stop(), waitTime, true);
+        expect(setInterval).toHaveBeenCalledTimes(1);
+        expect(setInterval).toHaveBeenLastCalledWith(expect.any(Function), waitTime);
+    });
 });
