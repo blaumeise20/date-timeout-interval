@@ -1,4 +1,5 @@
 export declare class Timeout {
+	public constructor(callback: () => void, timeMS: number, autoStart: boolean);
 	public start(): this;
 	public stop(): this;
 	public pause(): this;
@@ -7,6 +8,7 @@ export declare class Timeout {
 	public readonly timeLeft: number;
 }
 export declare class Interval {
+	public constructor(callback: () => void, timeMS: number, autoStart: boolean);
 	public start(): this;
 	public stop(): this;
 	public pause(): this;
