@@ -24,19 +24,22 @@ Timeout.prototype.start = function start(time) {
             this.state = 1;
         }
     }
+    return this;
 };
 Timeout.prototype.pause = function pause() {
-    if (this.state != 1) return;
+    if (this.state != 1) return this;
     clearTimeout(this._timerId);
     this._timerId = -1;
     this._timeLeft -= Date.now() - this._startedAt;
     this.state = 2;
+    return this;
 };
 Timeout.prototype.stop = function stop() {
     clearTimeout(this._timerId);
     this._timerId = -1;
     this._timeLeft = 0;
     this.state = 0;
+    return this;
 };
 Object.defineProperty(Timeout.prototype, "timeLeft", {
     get: function () {
@@ -74,19 +77,22 @@ Interval.prototype.start = function start() {
             this.state = 1;
         }
     }
+    return this;
 };
 Interval.prototype.pause = function pause() {
-    if (this.state != 1) return;
+    if (this.state != 1) return this;
     this._isInTimeout ? clearTimeout(this._timerId) : clearInterval(this._timerId);
     this._timerId = -1;
     this._timeLeft -= Date.now() - this._lastTrigger;
     this.state = 2;
+    return this;
 };
 Interval.prototype.stop = function stop() {
     this._isInTimeout ? clearTimeout(this._timerId) : clearInterval(this._timerId);
     this._timerId = -1;
     this._timeLeft = 0;
     this.state = 0;
+    return this;
 };
 Object.defineProperty(Interval.prototype, "timeLeft", {
     get: function () {
