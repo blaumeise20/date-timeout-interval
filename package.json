@@ -1,6 +1,6 @@
 {
   "name": "date-timeout-interval",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Implementation of setTimeout and setInterval with pause",
   "main": "index.js",
   "scripts": {
