@@ -35,7 +35,11 @@ This will add `Timeout` and `Interval` to `Date`.
 
 * `start(): this`
 
-  Starts the timer. If the timer is currently paused, it will resume the timer.
+  Starts the timer. If the timer is currently paused, it will resume the timer. If the timer is already done, it will reset it and start as normal.
+
+* `start(timeMS: number): this`
+
+  Starts the timer with the given time. **Only works, if the timer is not running or paused!**
 
 * `stop(): this`
 
@@ -71,6 +75,10 @@ This will add `Timeout` and `Interval` to `Date`.
 * `start(): this`
 
   Starts the interval. If the interval is currently paused, it will resume the interval.
+
+* `start(timeMS: number): this`
+
+  Starts the interval with the given time. **Only works, when the interval is reset!**
 
 * `stop(): this`
 

@@ -8,10 +8,9 @@ function Timeout(callback, time, autoStart = false) {
     this.state = 0;
     if (autoStart) this.start();
 };
-Timeout.prototype.start = function start(time) {
-    if (arguments.length > 0) { // warning: undocumented feature, not really working
-        this.currentTime = time;
-    }
+Timeout.prototype.start = function start(timeMS) {
+    if (this.state == 3) this.stop();
+    if (arguments.length > 0 && this.state == 0) this.currentTime = timeMS;
     if (this._timerId == -1) {
         if (this.state == 2) {
             this._startedAt = Date.now();
@@ -59,7 +58,8 @@ function Interval(callback, time, autoStart = false) {
     this._isInTimeout = false;
     if (autoStart) this.start();
 };
-Interval.prototype.start = function start() {
+Interval.prototype.start = function start(timeMS) {
+    if (arguments.length > 0 && this.state == 0) this.currentTime = timeMS;
     if (this._timerId == -1) {
         if (this.state == 2) {
             this._lastTrigger = Date.now();
