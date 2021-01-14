@@ -1,4 +1,8 @@
 # Timeout and Interval
+
+![Node.js CI](https://github.com/blaumeise20/date-timeout-interval/workflows/Node.js%20CI/badge.svg?branch=main)
+![version](https://img.shields.io/badge/version-1.1.0-success?style=plastic)
+
 Implementation of setTimeout and setInterval with pause.
 
 **The test coverage of this package is currently NOT GOOD, I would love to hear your feedback!! Feel free to [open an issue](https://github.com/blaumeise20/date-timeout-interval/issues/new)!**
