@@ -48,12 +48,12 @@ This will add `Timeout` and `Interval` to `Date`.
 * `state: 0 | 1 | 2 | 3`
 
   Defines the current state of the timer.
-  | State | Description |
-  |:-----:| ----------- |
-  | 0     | The timer is currently reset. This state occurs when creating the class without auto-start or after `stop` is called. |
-  | 1     | The timer is running. It can only be triggered by start, or by using auto-start while creating the class. |
-  | 2     | The timer has been paused by calling pause. |
-  | 3     | The timer has ended and fired the callback. |
+  | State | Enum name | Description |
+  |:-----:| --------- | ----------- |
+  | 0     | Reset     | The timer is currently reset. This state occurs when creating the class without auto-start or after `stop` is called. |
+  | 1     | Running   | The timer is running. It can only be triggered by start, or by using auto-start while creating the class. |
+  | 2     | Paused    | The timer has been paused by calling pause. |
+  | 3     | Done      | The timer has ended and fired the callback. |
 
 * `currentTime: number`
 
@@ -83,11 +83,12 @@ This will add `Timeout` and `Interval` to `Date`.
 * `state: 0 | 1 | 2`
 
   Defines the current state of the interval. These are the same as with the timeout, but there is no "end" state, because the interval will never end.
-  | State | Description |
-  |:-----:| ----------- |
-  | 0     | The interval is currently reset. This state occurs when creating the class without auto-start or after `stop` is called. |
-  | 1     | The interval is running. It can only be triggered by start, or by using auto-start while creating the class. |
-  | 2     | The interval has been paused by calling pause. |
+  | State | Enum name | Description |
+  |:-----:| --------- | ----------- |
+  | 0     | Reset     | The interval is currently reset. This state occurs when creating the class without auto-start or after `stop` is called. |
+  | 1     | Running   | The interval is running. It can only be triggered by start, or by using auto-start while creating the class. |
+  | 2     | Paused    | The interval has been paused by calling pause. |
+  Interval doesn't have a `Done` state, because it will run until stopped (or paused).
 
 * `currentTime: number`
 
@@ -96,6 +97,12 @@ This will add `Timeout` and `Interval` to `Date`.
 * `timeLeft: number`
 
   This will return the time left for the next execution to happen. **Warning: This will call a getter which will calculate the time, don't use this too often.**
+
+## enum `TimerState`
+* `TimerState.Reset`
+* `TimerState.Running`
+* `TimerState.Paused`
+* `TimerState.Done`
 
 # Licence
 This project is licenced under the MIT licence. Read it [here](LICENCE).
