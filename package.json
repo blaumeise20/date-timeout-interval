@@ -16,6 +16,7 @@
     "url": "https://github.com/blaumeise20/date-timeout-interval/issues"
   },
   "homepage": "https://github.com/blaumeise20/date-timeout-interval#readme",
+  "keywords": ["timeout", "date", "interval"],
   "devDependencies": {
     "jest": "^26.6.3"
   }
