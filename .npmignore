@@ -4,3 +4,5 @@ node_modules/
 .gitattributes
 .gitignore
 index.test.js
+src/
+tsconfig.json

@@ -1,4 +1,4 @@
-const { Timeout, Interval } = require("date-timeout-interval");
+const { Timeout, Interval } = require(".");
 require('jest');
 
 beforeEach(() => {

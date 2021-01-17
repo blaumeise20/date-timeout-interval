@@ -1,6 +1,8 @@
-import { Timeout, Interval } from "./index.d.ts";
+import { Timeout, Interval } from ".";
 
-interface Date {
-    static Timeout: Timeout;
-    static Interval: Interval;
+interface DateConstructor {
+    Timeout: Timeout;
+    Interval: Interval;
 }
+
+export {};
