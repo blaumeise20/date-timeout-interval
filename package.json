@@ -4,9 +4,9 @@
   "description": "Implementation of setTimeout and setInterval with pause",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npm run lint && jest",
     "lint": "eslint . --ext .ts",
-    "build": "tsc"
+    "build": "npm run lint && tsc"
   },
   "repository": {
     "type": "git",

@@ -13,7 +13,7 @@ export class Timeout {
     private _timerId: any; // not possible in any other way
 
     public constructor(callback: () => void, timeMS: number, autoStart?: boolean) {
-        (this._callbacks = []).push(() => { this.state = 3; callback.call(this); })
+        (this._callbacks = []).push(() => { this.state = 3; callback.call(this); });
         this.currentTime = timeMS;
         this._startedAt = 0;
         this._timeLeft = timeMS;
