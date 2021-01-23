@@ -12,11 +12,20 @@ export class Timeout {
     private _timeLeft: number;
     private _timerId: any; // not possible in any other way
 
-    public constructor(callback: () => void, timeMS: number, autoStart?: boolean) {
-        (this._callbacks = []).push(() => { this.state = 3; callback.call(this); });
-        this.currentTime = timeMS;
+    public constructor(timeMS: number, autoStart?: boolean);
+    public constructor(callback: () => void, timeMS: number, autoStart?: boolean);
+    public constructor(callback: (() => void) | number, timeMS?: number | boolean, autoStart?: boolean) {
+        if (typeof callback == "number") {
+            autoStart = !!timeMS;
+            timeMS = callback;
+            (this._callbacks = []).push(() => this.state = 3);
+        }
+        else {
+            (this._callbacks = []).push(() => { this.state = 3; callback.call(this); });
+        }
+        this.currentTime = Number(timeMS);
         this._startedAt = 0;
-        this._timeLeft = timeMS;
+        this._timeLeft = this.currentTime;
         this._timerId = null;
         this.state = 0;
         if (autoStart) this.start();
