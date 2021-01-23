@@ -39,12 +39,12 @@ export class Timeout {
         if (this._timerId == null) {
             if (this.state == 2) {
                 this._startedAt = Date.now();
-                this._timerId = setTimeout(this._executeCallbacks, this._timeLeft);
+                this._timerId = setTimeout(this._executeCallbacks.bind(this), this._timeLeft);
                 this.state = 1;
             }
             else if (this.state == 0) {
                 this._startedAt = Date.now();
-                this._timerId = setTimeout(this._executeCallbacks, this.currentTime);
+                this._timerId = setTimeout(this._executeCallbacks.bind(this), this.currentTime);
                 this.state = 1;
             }
         }
