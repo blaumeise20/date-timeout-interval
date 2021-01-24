@@ -13,5 +13,8 @@
         "quotes": ["error", "double"],
         "indent": ["error", 4],
         "semi": "error"
+    },
+    "env": {
+        "jest/globals": true
     }
 }
