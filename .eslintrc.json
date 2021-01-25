@@ -2,7 +2,8 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "eslint-plugin-jest"
     ],
     "extends": [
         "eslint:recommended",
@@ -12,7 +13,8 @@
     "rules": {
         "quotes": ["error", "double"],
         "indent": ["error", 4],
-        "semi": "error"
+        "semi": "error",
+        "no-undef": "off"
     },
     "env": {
         "jest/globals": true
