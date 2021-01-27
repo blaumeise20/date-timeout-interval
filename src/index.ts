@@ -1,5 +1,5 @@
 export class Timeout {
-    public state: 0 | 1 | 2 | 3;
+    public state: TimerState;
     public currentTime: number;
     public get timeLeft(): number {
         if (this.state == 0 || this.state == 3) return 0;
@@ -90,7 +90,7 @@ export class Timeout {
 
 
 export class Interval {
-    public state: 0 | 1 | 2;
+    public state: TimerState;
     public currentTime: number;
     public get timeLeft(): number {
         if (this.state == 0) return 0;
