@@ -61,12 +61,20 @@ export class Timeout {
     }
 
     public stop(): this {
+        return this._stop(true);
+    }
+
+    private _stop(reject: boolean): this {
         clearTimeout(this._timerId);
         this._timerId = null;
         this._timeLeft = 0;
         this.state = 0;
-        this._rejecters.splice(0).forEach(r => r());
+        if (reject) this._rejecters.splice(0).forEach(r => r());
         return this;
+    }
+
+    public restart(): this {
+        return this._stop(false).start();
     }
 
     public then(onResolve: () => void, onReject: () => void): void {

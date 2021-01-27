@@ -49,6 +49,21 @@ This will add `Timeout` and `Interval` to `Date`.
 
   Pauses the timer without reseting it. This is the main functionality of this class.
 
+* `restart(): this`
+
+  Restarts the timer from zero, without firing any callback. Useful for autocomplete lists.
+
+  ```ts
+  import { Timeout } from "date-timeout-interval";
+  const text = document.getElementById("myText");
+  const timeout = new Timeout(() => {
+      // do something...
+  }, 200);
+  text.oninput = () => {
+      timeout.restart();
+  };
+  ```
+
 * `await timeout`
 
   The Timeout class implements the awaitable pattern, so you can await the timeout. It will throw an error if the timeout is stopped before finishing.
