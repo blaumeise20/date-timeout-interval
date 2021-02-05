@@ -1,7 +1,7 @@
 # Timeout and Interval
 
 ![Node.js CI](https://github.com/blaumeise20/date-timeout-interval/workflows/Node.js%20CI/badge.svg?branch=main)
-![version](https://img.shields.io/badge/version-1.2.0-success?style=plastic)
+![version](https://img.shields.io/badge/version-1.3.0-success?style=plastic)
 
 Implementation of setTimeout and setInterval with pause.
 
