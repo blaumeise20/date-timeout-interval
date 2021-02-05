@@ -6,7 +6,8 @@
   "scripts": {
     "test": "npm run lint && jest",
     "lint": "eslint . --ext .ts",
-    "build": "npm run lint && tsc"
+    "build": "npm run lint && tsc",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
